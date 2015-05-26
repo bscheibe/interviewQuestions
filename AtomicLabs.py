@@ -9,24 +9,25 @@ class browserHistory(object):
 		if hist is None:
 			self.hist = []
 
-	# Add url to the history
+	# Add url to the history: O(n)
 	def addUrl(self, url):
 		if not type(url) == str: raise AssertionError
 		self.hist.insert(0, url)
 		return None
 
-	# Retrieve the url from the history
+	# Retrieve the url from the history: O(n)
 	def retrieveUrl(self, n):
 		if not n >= 0: raise AssertionError
 		tempDict = {}
 		retList = []
 		lenOfList = len(self.hist)
+		# Loop over range n times
 		for i in range(n):
 			if i >= lenOfList:
 				break
 			tempUrl = self.hist[i]
+			# Check in O(1) time whether we already have tempUrl
 			if not tempDict.get(tempUrl):
-				print tempUrl
 				retList.append(tempUrl)
 				tempDict[tempUrl] = True
 		return retList
