@@ -20,6 +20,7 @@ class browserHistory(object):
 	# Retrieve the url from the history: O(n)
 	# Could reverse list for faster addUrl so O(n) + O(n)
 	# I find this more readable however
+	# See I could do this fancy with list comprehension and sets
 	def retrieveUrl(self, n):
 		if not n >= 0: raise AssertionError
 		tempDict = {}
