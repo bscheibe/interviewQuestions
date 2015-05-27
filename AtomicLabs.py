@@ -31,7 +31,7 @@ class browserHistory(object):
 				break
 			tempUrl = self.hist[i]
 			# Check in O(1) time whether we already have tempUrl
-			if not tempDict.get(tempUrl):
+			if not tempUrl in tempDict:
 				retList.append(tempUrl)
 				tempDict[tempUrl] = True
 		return retList
