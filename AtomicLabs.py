@@ -40,7 +40,7 @@ def main():
 		try:
 			myHistory.addUrl(raw_input('> '))
 		except EOFError:
-			print '\n'
+			print
 			break
 
 	print myHistory.retrieveUrl(int(raw_input('Retrieve? ')))
