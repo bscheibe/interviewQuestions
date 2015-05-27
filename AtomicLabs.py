@@ -11,12 +11,15 @@ class browserHistory(object):
 			self.hist = []
 
 	# Add url to the history: O(n)
+	# Could make O(1) by adding to back but then would have to add a reverse to retrive URL
 	def addUrl(self, url):
 		if not type(url) == str: raise AssertionError
 		self.hist.insert(0, url)
 		return None
 
 	# Retrieve the url from the history: O(n)
+	# Could reverse list for faster addUrl so O(n) + O(n)
+	# I find this more readable however
 	def retrieveUrl(self, n):
 		if not n >= 0: raise AssertionError
 		tempDict = {}
