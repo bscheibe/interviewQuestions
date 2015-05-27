@@ -2,6 +2,7 @@
 # import sys
 # print sys.argv
 
+# Having object is unecessary but good for reference of inheritance
 class browserHistory(object):
 
 	# Init the self.hist object
